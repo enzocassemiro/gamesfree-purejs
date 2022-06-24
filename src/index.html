@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Games - PureJS</title>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/game.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <script src="/src/scripts/app.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Free Games</h1>
+        <p>Simple list of free games made in Pure JavaScript</p>
+    </header>
+
+    <main class="container">
+        <div class="plataform-choice">
+            <label for="platform">Choose a platform:</label>
+            <select id="platform">
+                <option value="all">All</option>
+                <option value="pc">Pc</option>
+                <option value="browser">Browser</option>
+            </select>
+        </div>
+
+        <div class="genre-choice">
+            <label for="genre">Choose a genre:</label>
+            <select id="genre">
+                <option value="all">All</option>
+                <option value="mmorpg">mmorpg</option>
+                <option value="shooter">shooter</option>
+                <option value="strategy">strategy</option>
+                <option value="moba">moba</option>
+                <option value="racing">racing</option>
+                <option value="sports">sports</option>
+                <option value="social">social</option>
+                <option value="sandbox">sandbox</option>
+                <option value="open-world">open-world</option>
+                <option value="survival">survival</option>
+                <option value="pvp">pvp</option>
+                <option value="pve">pve</option>
+                <option value="pixel">pixel</option>
+                <option value="voxel">voxel</option>
+                <option value="zombie">zombie</option>
+                <option value="turn-based">turn-based</option>
+                <option value="first-person">first-person</option>
+                <option value="third-Person">third-Person</option>
+                <option value="top-down">top-down</option>
+                <option value="tank">tank</option>
+                <option value="space">space</option>
+                <option value="sailing">sailing</option>
+                <option value="side-scroller">side-scroller</option>
+                <option value="superhero">superhero</option>
+                <option value="superhero">superhero</option>
+                <option value="permadeath">permadeath</option>
+                <option value="card">card</option>
+                <option value="battle-royale">battle-royale</option>
+                <option value="mmo">mmo</option>
+                <option value="mmofps">mmofps</option>
+                <option value="mmotps">mmotps</option>
+                <option value="3d">3d</option>
+                <option value="2d">2d</option>
+                <option value="anime">anime</option>
+                <option value="fantasy">fantasy</option>
+                <option value="sci-fi">sci-fi</option>
+                <option value="fighting">fighting</option>
+                <option value="action-rpg">action-rpg</option>
+                <option value="action">action</option>
+                <option value="military">military</option>
+                <option value="martial-arts">martial-arts</option>
+                <option value="flight">flight</option>
+                <option value="low-spec">low-spec</option>
+                <option value="tower-defense">tower-defense</option>
+                <option value="horror">horror</option>
+                <option value="mmorts">mmorts</option>
+            </select>
+        </div>
+
+        <div class="games-container"></div>
+
+    </main>
+
+    <footer class="footer">
+        <div>® All Rights Reserved to - <a href="https://www.freetogame.com/api-doc" target="_blank">Free to Game API</a></div>
+    </footer>
+
+</body>
+
+</html>

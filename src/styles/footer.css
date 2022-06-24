@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    place-content: center center;
+    padding: 15px;
+    margin-top: 35px;
+    background-color: var(--card-color);
+    color: var(--title-color);
+}
+
+.footer a {
+    color: white;
+}

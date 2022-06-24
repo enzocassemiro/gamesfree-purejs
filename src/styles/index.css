@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,400;1,300&family=Oswald:wght@700&family=Roboto:wght@300&family=Titillium+Web:wght@200&display=swap');
+
+.container {
+    display: grid;
+    grid-template-rows: 4fr auto;
+}
