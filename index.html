@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" href="./src/styles/loader.css">
+    <link rel="stylesheet" href="./src/styles/header.css">
     <link rel="stylesheet" href="./src/styles/game.css">
     <link rel="stylesheet" href="./src/styles/footer.css">
 
@@ -18,26 +20,23 @@
 
 </head>
 
-<body>
+<body class="container">
 
-    <header>
-        <h1>Free Games</h1>
-        <p>Simple list of free games made in Pure JavaScript</p>
-    </header>
-
-    <main class="container">
-        <div class="plataform-choice">
-            <label for="platform">Choose a platform:</label>
-            <select id="platform">
-                <option value="all">All</option>
-                <option value="pc">Pc</option>
-                <option value="browser">Browser</option>
-            </select>
-        </div>
-
-        <div class="genre-choice">
-            <label for="genre">Choose a genre:</label>
-            <select id="genre">
+    <header class="header">
+        <h1 class="header--title">Free Games</h1>
+        <p class="header--description">Simple list of free games made in Pure JavaScript</p>
+        <div class="header-filters">
+            <div class="plataform-choice">
+                <label for="platform">Choose a platform:</label>
+                <select id="platform">
+                    <option value="all">All</option>
+                    <option value="pc">Pc</option>
+                    <option value="browser">Browser</option>
+                </select>
+            </div>
+            <div class="genre-choice">
+                <label for="genre">Choose a genre:</label>
+                <select id="genre">
                 <option value="all">All</option>
                 <option value="mmorpg">mmorpg</option>
                 <option value="shooter">shooter</option>
@@ -86,10 +85,14 @@
                 <option value="horror">horror</option>
                 <option value="mmorts">mmorts</option>
             </select>
+            </div>
         </div>
 
-        <div class="games-container"></div>
+    </header>
 
+    <main>
+        <div class="loader"></div>
+        <div class="games-container"></div>
     </main>
 
     <footer class="footer">

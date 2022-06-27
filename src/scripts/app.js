@@ -1,35 +1,43 @@
 const PLATAFORM_CHOICE = document.querySelector("#platform");
 const GENRE_CHOICE = document.querySelector("#genre");
 const GAMES_CONTAINER = document.querySelector(".games-container");
+const LOADER = document.querySelector(".loader");
+const MAIN = document.querySelector("main");
 const BASE_URL = "https://free-to-play-games-database.p.rapidapi.com/api"
 
-window.addEventListener('load', e => {
+window.addEventListener('load', () => {
     getGames("/games");
 
-    PLATAFORM_CHOICE.addEventListener('change',e => {
-        clearAll();
+    PLATAFORM_CHOICE.addEventListener('change', () => {
         const choice = PLATAFORM_CHOICE.value
         const genre = GENRE_CHOICE.value
+
+        clearAll();
+
         if (genre === "all") {
             getGames("/games?platform=" + choice)
             return
         }
+        
         getGames("/games?platform=" + choice + "&category=" + genre)
     })
-
-    GENRE_CHOICE.addEventListener('change',e => {
-        clearAll();
+    
+    GENRE_CHOICE.addEventListener('change', () => {
         const choice = PLATAFORM_CHOICE.value
         const genre = GENRE_CHOICE.value
+        
+        clearAll();
+        
         if (genre === "all") {
             getGames("/games?platform=" + choice)
             return
         }
+        
         getGames("/games?platform=" + choice + "&category=" + genre)
     })
 })
 
-function getGames(filters) {
+async function getGames(filters) {
     const options = {
         method: 'GET',
         headers: {
@@ -37,15 +45,16 @@ function getGames(filters) {
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
+    
+    showLoader();
 
-    fetch(`${BASE_URL}${filters}`, options)
-        .then(response => response.json())
-        .then(games => {
-            games.forEach(game => {
-                renderGames(game);
-            });
-        })
-        .catch(err => console.error('Erro:', err));
+    const response = await fetch(`${BASE_URL}${filters}`,options)
+    const games = await response.json()
+    games.forEach(game => {
+        renderGames(game);
+    });
+
+    hideLoader();
 }
 
 function renderGames(game) {
@@ -71,12 +80,13 @@ function renderGames(game) {
     const gameTitle = document.createElement('span');
     const gameTextDescription = document.createElement('p');
     const gameButtonGenre = document.createElement('button');
-    const gameLink = document.createElement('a');
     const gamePlataform = document.createElement('p');
 
+    gameDiv.classList.add('card');
     gameDivDescription.classList.add('description');
     gameDivTitle.classList.add('tooltip');
     gameTitle.classList.add('tooltiptext');
+    gameDivFooter.classList.add('card-footer')
 
     gameDivTitle.innerHTML = title;
     gameTitle.innerHTML = title;
@@ -108,4 +118,14 @@ function clearAll(){
     while (GAMES_CONTAINER.firstChild) {
         GAMES_CONTAINER.removeChild(GAMES_CONTAINER.lastChild);
     }
+}
+
+function hideLoader() {
+    MAIN.removeChild(LOADER);
+    GAMES_CONTAINER.style.display = 'grid';
+}
+
+function showLoader() {
+    MAIN.appendChild(LOADER);
+    GAMES_CONTAINER.style.display = 'none';
 }

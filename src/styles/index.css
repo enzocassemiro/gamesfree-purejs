@@ -2,5 +2,5 @@
 
 .container {
     display: grid;
-    grid-template-rows: 4fr auto;
+    grid-template-rows: min-content auto min-content;
 }

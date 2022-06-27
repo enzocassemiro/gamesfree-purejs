@@ -1,11 +1,12 @@
 .games-container {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fill, 385px);
     gap: 3rem;
     place-content: center center;
 }
 
 .games-container > div {
+    cursor: pointer;
     background-color: var(--card-color);
     border: 10px solid var(--card-color);
     border-radius: 5px;
@@ -70,3 +71,6 @@ opacity: 1;
     text-overflow: ellipsis;
 }
 
+.card-footer {
+    display: flex;
+}
