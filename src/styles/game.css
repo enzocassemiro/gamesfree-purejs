@@ -62,15 +62,40 @@ opacity: 1;
 }
 
 .description {
-    color: var(--description-color);
-    font-weight: 600;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 1.5rem;
+    
+    font-weight: 600;
+    
+    color: var(--description-color);
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card div:last-of-type {
+    margin-top: auto;
+} 
 
 .card-footer {
     display: flex;
+    place-content: space-between;
+    font-weight: 800;
+    color: var(--title-color);
+}
+
+.card-footer button {
+    padding: 5px;
+    
+    font-weight: 600;
+
+    border-radius: 0.5rem;
+    color: rgba(0, 0, 0, 0.747);
+    background-color: var(--description-color);
 }
