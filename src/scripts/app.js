@@ -91,6 +91,7 @@ function renderGames(game) {
     gameDivTitle.innerHTML = title;
     gameTitle.innerHTML = title;
     gameImg.src = thumbnail;
+    gameImg.loading = "lazy"
     gameTextDescription.innerHTML = shortDescription;
     gameButtonGenre.innerHTML = genre;
     gamePlataform.innerHTML = platform;
